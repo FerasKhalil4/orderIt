@@ -23,7 +23,7 @@ app.use(
   })
 );
 app.use(cookieParser());
-app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
+app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.json());
 
 // Routes
