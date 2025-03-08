@@ -1,3 +1,2 @@
 # orderIt
-backend of the order it project
-
+order it project build with react js and node js/ express js
