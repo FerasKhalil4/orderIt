@@ -16,11 +16,11 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Set the correct path for static files
-const uploadsPath = path.join(__dirname, "public/uploads");
+const uploadsPath = path.join(__dirname, "public/uploads/images");
 
 // Serve static files
 app.use("/uploads", express.static(uploadsPath));
+
 // Middleware
 app.use(
   cors({
