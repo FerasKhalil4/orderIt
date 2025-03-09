@@ -9,12 +9,26 @@ import statisticsRouter from "./routes/statisticsRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import fs from "fs";
 
 const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
-export const __dirname = path.dirname(__filename);
+const __dirname = path.dirname(__filename);
 
+// Set the correct path for static files
+const uploadsPath = path.join(__dirname, "public/uploads");
+
+// Ensure the folder exists
+if (!fs.existsSync(uploadsPath)) {
+  fs.mkdirSync(uploadsPath, { recursive: true });
+  console.log("✅ Created uploads directory:", uploadsPath);
+} else {
+  console.log("📂 Uploads directory exists:", uploadsPath);
+}
+
+// Serve static files
+app.use("/uploads", express.static(uploadsPath));
 // Middleware
 app.use(
   cors({
