@@ -24,7 +24,8 @@ app.use("/uploads", express.static(uploadsPath));
 // Middleware
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin:
+      "https://orderit-client-5chct7sru-feraskhalil4s-projects.vercel.app",
     credentials: true,
   })
 );
