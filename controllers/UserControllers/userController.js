@@ -11,6 +11,7 @@ dotenv.config();
 
 const createUser = async (req, res) => {
   try {
+    console.log(req.body);
     const isAdmin = req.body?.isAdmin ? true : false;
     const checkUser = await User.findOne({ where: { email: req.body.email } });
     if (checkUser) {
