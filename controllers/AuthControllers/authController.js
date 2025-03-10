@@ -7,8 +7,6 @@ export const cookieOptions = {
   sameSite: "None",
   secure: true,
   maxAge: 7 * 24 * 60 * 60 * 1000,
-  domain: "orderit-client-5chct7sru-feraskhalil4s-projects.vercel.app",
-  path: "/",
 };
 
 const login = async (req, res) => {
@@ -42,8 +40,6 @@ const logout = (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: "None",
-      domain: "orderit-client-5chct7sru-feraskhalil4s-projects.vercel.app",
-      path: "/",
     });
     return res.json({ message: "logout" });
   } catch (err) {
