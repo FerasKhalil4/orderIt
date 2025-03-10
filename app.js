@@ -9,9 +9,10 @@ import statisticsRouter from "./routes/statisticsRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import fs from "fs";
 
 const app = express();
+
+app.use(express.json());
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
