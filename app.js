@@ -26,7 +26,9 @@ app.use(
   cors({
     origin:
       "https://orderit-client-5chct7sru-feraskhalil4s-projects.vercel.app",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
+    allowedHeaders: "Content-Type,Authorization",
   })
 );
 app.use(cookieParser());
