@@ -4,9 +4,11 @@ import jwt from "jsonwebtoken";
 
 export const cookieOptions = {
   httpOnly: true,
-  sameSite: "Strict",
+  sameSite: "None",
   secure: true,
   maxAge: 7 * 24 * 60 * 60 * 1000,
+  domain: "orderit-client-5chct7sru-feraskhalil4s-projects.vercel.app",
+  path: "/",
 };
 
 const login = async (req, res) => {
@@ -36,7 +38,13 @@ const login = async (req, res) => {
 
 const logout = (req, res) => {
   try {
-    res.clearCookie("refreshToken");
+    res.clearCookie("refreshToken", {
+      httpOnly: true,
+      secure: true,
+      sameSite: "None",
+      domain: "orderit-client-5chct7sru-feraskhalil4s-projects.vercel.app",
+      path: "/",
+    });
     return res.json({ message: "logout" });
   } catch (err) {
     return res.status(500).json({ message: err.message });
