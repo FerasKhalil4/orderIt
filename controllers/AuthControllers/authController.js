@@ -10,7 +10,7 @@ export const cookieOptions = {
 };
 
 const login = async (req, res) => {
-  console.log(req.body, "request");
+  console.log(req.body, "request ,");
 
   try {
     const user = await User.findOne({ where: { email: req.body.email } });
